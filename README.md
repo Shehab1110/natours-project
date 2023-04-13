@@ -24,7 +24,7 @@ To run this project locally, you need to have Node.js and MongoDB installed on y
 3. Install the dependencies using `npm install` or `yarn install`.
 4. Create a `.env` file in the root folder and add the following environment variables:
 
-`env
+`
 NODE_ENV=development
 PORT=3000
 DATABASE=<your-mongodb-connection-string>
