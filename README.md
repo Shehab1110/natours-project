@@ -40,8 +40,10 @@ EMAIL_FROM=<your-email-address>
 STRIPE_SECRET_KEY=<your-stripe-secret-key>`
 
 Run the app using npm start or yarn start.<br> Open your browser and go to http://localhost:3000.<br> 
+
 ### :sparkles: Features
-<br> User registration and login with JWT authentication<br> Password reset with email verification<br> User profile update and deletion<br> User roles and permissions<br> Tour creation, update, deletion and filtering<br> Tour image upload and processing<br> Tour ratings and reviews<br> Tour booking with Stripe integration<br> Booking confirmation and invoice email<br> Error handling and logging<br>
+User registration and login with JWT authentication<br> Password reset with email verification<br> User profile update and deletion<br> User roles and permissions<br> Tour creation, update, deletion and filtering<br> Tour image upload and processing<br> Tour ratings and reviews<br> Tour booking with Stripe integration<br> Booking confirmation and invoice email<br> Error handling and logging<br>
 ### :hammer_and_wrench: Technologies
-<br> Node.js<br> Express<br> MongoDB<br> Mongoose<br> Pug<br> Sass<br> Stripe<br> Nodemailer<br> Multer<br> Sharp<br> Helmet<br> Morgan<br> Bcrypt<br> Jsonwebtoken<br> Validator<br>
-### :clap: Acknowledgements<br> This project is based on the Node.js course on Udemy by Jonas Schmedtmann. I would like to thank him for creating this awesome course and teaching me how to build a full-stack web app with Node.js.<br>
+Node.js<br> Express<br> MongoDB<br> Mongoose<br> Pug<br> Sass<br> Stripe<br> Nodemailer<br> Multer<br> Sharp<br> Helmet<br> Morgan<br> Bcrypt<br> Jsonwebtoken<br> Validator<br>
+### :clap: Acknowledgements
+This project is based on the Node.js course on Udemy by Jonas Schmedtmann. I would like to thank him for creating this awesome course and teaching me how to build a full-stack web app with Node.js.<br>
