@@ -24,7 +24,7 @@ To run this project locally, you need to have Node.js and MongoDB installed on y
 3. Install the dependencies using `npm install` or `yarn install`.
 4. Create a `.env` file in the root folder and add the following environment variables:
 
-```env
+`env
 NODE_ENV=development
 PORT=3000
 DATABASE=<your-mongodb-connection-string>
@@ -37,7 +37,8 @@ EMAIL_PASSWORD=<your-email-password>
 EMAIL_HOST=<your-email-host>
 EMAIL_PORT=<your-email-port>
 EMAIL_FROM=<your-email-address>
-STRIPE_SECRET_KEY=<your-stripe-secret-key>
+STRIPE_SECRET_KEY=<your-stripe-secret-key>`
+
 Run the app using npm start or yarn start.
 Open your browser and go to http://localhost:3000.
 :sparkles: Features
