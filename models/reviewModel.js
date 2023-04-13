@@ -10,6 +10,7 @@ const reviewSchema = new mongoose.Schema(
       type: Number,
       min: 1,
       max: 5,
+      required: true,
     },
     createdAt: {
       type: Date,
@@ -33,7 +34,7 @@ const reviewSchema = new mongoose.Schema(
 );
 
 reviewSchema.pre(/^find/, function (next) {
-  this.populate('tour').populate({
+  this.populate({
     path: 'user',
     select: 'name -_id',
   });
