@@ -60,6 +60,8 @@ exports.protect = catchAsync(async (req, res, next) => {
     req.headers.authorization.startsWith('Bearer')
   ) {
     token = req.headers.authorization.split(' ')[1];
+  } else if (req.cookies.JWT) {
+    token = req.cookies.JWT;
   }
   if (!token)
     return next(
@@ -82,6 +84,27 @@ exports.protect = catchAsync(async (req, res, next) => {
     );
   }
   req.user = user;
+  next();
+});
+
+exports.isLoggedIn = catchAsync(async (req, res, next) => {
+  // 1) Check if the token exists
+  if (req.cookies.JWT) {
+    const decoded = await promisify(jwt.verify)(
+      req.cookies.JWT,
+      process.env.JWT_SECRET
+    );
+    // 2) Check if the user still exists
+    const user = await User.findById(decoded.id);
+    if (!user) return next();
+    // 3) Check if the user changed the password after the token was issued
+    if (user.changedPasswordAfter(decoded.iat)) {
+      return next();
+    }
+    // There is a logged in user
+    res.locals.user = user;
+    next();
+  }
   next();
 });
 

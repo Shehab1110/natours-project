@@ -1,12 +1,12 @@
 /* eslint-disable */
 import keys from '../../config/keys';
 
-export const displayMap = locations => {
+exports.displayMap = (locations) => {
   mapboxgl.accessToken = keys.mapBoxAccessToken;
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/rasedmia/ck3cmgrsx1qa61cpiuonp0dja',
-    scrollZoom: false
+    scrollZoom: false,
     // center: [-118.113491, 34.111745],
     // zoom: 10,
     // interactive: false
@@ -14,7 +14,7 @@ export const displayMap = locations => {
 
   const bounds = new mapboxgl.LngLatBounds();
 
-  locations.forEach(loc => {
+  locations.forEach((loc) => {
     // Create marker
     const el = document.createElement('div');
     el.className = 'marker';
@@ -22,14 +22,14 @@ export const displayMap = locations => {
     // Add marker
     new mapboxgl.Marker({
       element: el,
-      anchor: 'bottom'
+      anchor: 'bottom',
     })
       .setLngLat(loc.coordinates)
       .addTo(map);
 
     // Add popup
     new mapboxgl.Popup({
-      offset: 30
+      offset: 30,
     })
       .setLngLat(loc.coordinates)
       .setHTML(`<p>Day ${loc.day}: ${loc.description}</p>`)
@@ -44,7 +44,7 @@ export const displayMap = locations => {
       top: 200,
       bottom: 150,
       left: 100,
-      right: 100
-    }
+      right: 100,
+    },
   });
 };
