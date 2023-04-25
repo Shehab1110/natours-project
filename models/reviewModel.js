@@ -35,6 +35,7 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
+// Preventing duplicate reviews
 reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
 
 reviewSchema.pre(/^find/, function (next) {
@@ -70,16 +71,16 @@ reviewSchema.statics.calcRatingsAverage = async function (tourID) {
     });
   }
 };
-
+// Document middleware for calculating average rating and quantity of ratings for a tour after a new review is created
 reviewSchema.post('save', function () {
   this.constructor.calcRatingsAverage(this.tour);
 });
-
+// Query middleware for calculating average rating and quantity of ratings for a tour after a review is updated or deleted
 reviewSchema.pre(/^findOneAnd/, async function (next) {
   this.r = await this.findOne();
   next();
 });
-
+// Query middleware for calculating average rating and quantity of ratings for a tour after a review is updated or deleted
 reviewSchema.post(/^findOneAnd/, async function () {
   this.r.constructor.calcRatingsAverage(this.r.tour);
 });

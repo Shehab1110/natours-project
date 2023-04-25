@@ -21,6 +21,8 @@ router.patch(
 router.patch(
   '/updateMe',
   authController.protect,
+  userController.uploadUserPhoto,
+  userController.resizeUserPhoto,
   userController.preUpdateMe,
   userController.updateMe
 );
