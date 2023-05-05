@@ -41,9 +41,9 @@ exports.signUp = catchAsync(async (req, res, next) => {
   });
   await emailSender(
     newUser,
-    'Sending with SendGrid is Fun',
-    'and easy to do anywhere, even with Node.js',
-    '<strong>and easy to do anywhere, even with Node.js</strong>'
+    'Welcome to the Natours Family!',
+    'Start your journey with us!',
+    '<h1> Welcome to the Natours Family! </h1>'
   );
   createSendToken(newUser, 201, res);
 });
