@@ -31,6 +31,7 @@
     "pug": "^3.0.2",
     "sharp": "^0.32.0",
     "slugify": "^1.6.5",
+    "stripe": "^12.4.0",
     "validator": "^13.9.0",
     "validators": "^0.3.1",
     "xss-clean": "^0.1.1"
